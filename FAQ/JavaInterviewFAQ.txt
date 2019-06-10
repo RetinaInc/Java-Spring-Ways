@@ -1,0 +1,141 @@
+1. Stack and Queues
+	- Special non primitive data type
+
+		Stack - LIFO - push and pop
+
+		Queue - FIFO - enqueue and Dequeue
+
+2. Advantages of Behaviourial Driven Develppment?
+	BDD is derieved from TDD
+		- improves collabration among team members (both technical and non technical)
+		-HIgh Visibility of project progress
+		- it follows business values
+		- use of Uniquitous language
+		- minimizes the cost of development and improves quality code
+
+3. Dependency Injection / IOC
+-IOC controls the flow of  program 
+
+4. SOAP n REST
+	SOAP
+	- XML based messenging requires XML for making request as well as response
+	- independent of transport, platforma and language
+	- Standardized
+	- Built in error handling
+	- Automation with certain languages
+	can use HTTP, SMTP
+	However,
+	- SOAP is Heavy weight than REST
+
+	REST
+	- depends on URL and parameters in URL for request and response in form of RSS, JSON, CSV whichever you want.
+	- hence trequires HTTP protocol
+
+	AWS supports both SOAP and REST
+
+5. JOIN
+	- ALLOWS YOU TO COMBINE COLUMNS FROM ONE OR MORE TABLES using values common to them
+		- inner join (Join): 
+			- Select records having matching values in both tables
+		- Left Join (Outer):
+			-Select records from first table(left) with matching records from right table
+
+		- Right Join (Outer)
+			-Select records from second table(right) with matching records from left table
+
+		- Full Join: 
+			- Selects all records from both tables
+			- in other words combining result of both LEFT JOIN and RIGHT JOIN.
+
+6. SQL Vs noSQl
+	- SQL
+		- Relational e.g MySQL
+		- table based (data inform of tables)
+		- Predefined schema
+		- Vertically scallable
+		- good for complex queries
+		- Not good for hierarchical data storage
+		- ACID properties ( Atomicity, Consistency, Isolation and durability)
+	- NoSQL
+		- Non Relational (distributed ). e.g MongoDB, HBase, CouchDB, Redis
+		- document based (data as collection of key value pairs )
+		- dynamic Schema(No standard schema for unstructured data)
+		- horizontally scalable
+		- do not support complex queries
+		- good for hierarchical data storage (good for large data set)
+		- follows the Brewers CAP theorem ( Consistency, Availability and Partition tolerance )
+
+7. Design Pattern
+	- reusable general solution to common problems in software design n development
+	- best practices
+
+8. Docker vs VM
+	- Docker is container based platform
+	- More scalable and safer than VM due to container
+	- Docker containers are executed with the Docker engine rather than the hypervisor
+	- Smaller than VM
+
+	- VM is not based on containers
+	- loads full OS with its own memory management
+	- overhead of virtual device drivers exist
+
+9. Composition n inhweritance-  composition over inheritance
+	- Composition - implement part of  relationship
+	- composition is achieved by using instance variables that refers to other objects.
+
+	- best practice in java programming is to use composition over 
+	- java do not support multiple heritance
+	- Composition offers better test-ability of a class than Inheritance.
+	- Design patterns favors Composition over Inheritance
+	- Composition is better for encapsulation
+
+
+	-Association 
+		- relationship between entities or objects2
+	- Aggregation 
+		- has relationship
+		- is unidirectional association
+		- both etity can survive independently
+
+	- Composition
+		- part of relationship
+		- both entities are dependent to one another
+		- restricted form of aggregation as Composition is strong relationship
+
+
+10. Abstract and Interface
+	- Abstract class can have methods with implementation
+
+	-Can have constructor
+
+
+	- Interface have methods with empty implementation
+	- provides absolute abstraction
+	- No constructors
+
+
+
+11. java 8 new features
+	- support lamda expression
+	- Method references
+	- Default method
+	- new date and time API
+	- Stream API
+
+	- ForEach()
+
+12. Linked List
+	 - have a sequence of nodes with each node containing a reference link  to its next node.
+	 - Last node have null as reference link
+
+13. Hash Tree nad HashMap Hashset
+	- HashMap : 
+		data structure which allows to store object and retrieve it in constant time with a known key.
+		there are key value pairs.
+		- HAshMap is implemetation of map interface
+	- HashSet :
+		- HashSet in Java is a collection which implements Set interface and backed by an HashMap.
+		- HashSet can be used in place of ArrayList to store the object if you require no duplicate and don't care about insertion order.
+
+
+14. two way data binding
