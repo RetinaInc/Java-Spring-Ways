@@ -1,0 +1,16 @@
+Error: import of the javax.persistance.GenerationType saying its not accessible
+
+
+
+
+You may still encounter problems for "import of the javax.persistance.GenerationType saying its not accessible"
+
+To resolve this, apply the following steps
+
+1. Right Click on the Project -> Properties - > Java Build Path.
+
+2. Follow the steps as showed in the images below.
+
+3. In Module Properties -> Select All in Available modules and move to Explicitly included modules.
+
+4. Project->Clean... and Rebuild the Project and try again.
