@@ -1,0 +1,33 @@
+HEADS UP - JAVA 9 USERS - Eclipse Generate toString() fails
+
+
+
+Problem:
+
+
+
+The Generate toString() process fails in Eclipse with Java 9.
+
+When clicking on Generate toString() an error message pops up saying:-
+
+Cannot Create method Implementations
+
+Reason:
+
+C:\Program Files\Java\jre 9.04\lib\jrt-fs.jar\java.base[java.base is not in project's build path]
+
+====
+
+Answer
+
+
+
+This is a bug in Eclipse when using Java 9.
+
+It is a known issue and logged here by the Eclipse team.
+
+Bug link: https://bugs.eclipse.org/bugs/show_bug.cgi?id=521995
+
+---
+
+As a work around, you will need to manually write the code for toString(). You can move ahead in the video and then pause the video where you see the toString() code.
