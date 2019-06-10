@@ -1,0 +1,17 @@
+HEADS UP: New Spring Security 5.0.2  - deprecated method
+
+The Spring Security team released Spring Security 5.0.2 on 20 Feb 2018.
+
+They deprecated the method: User.withDefaultPasswordEncoder() 
+
+We use this for the in-memory authentication section of the course.
+
+This issue only applies to in-memory authentication.
+
+But don't worry, this is okay for demo purposes (in-memory).
+
+Later in the course we'll store user accounts in the database using encryption. As a result, this will be a non-issue (there are no deprecated methods for database storage).
+
+---
+
+In the following video, when you see a deprecation warning for, User.withDefaultPasswordEncoder()  you can safely ignore it: because we are only using it for demo purposes.
