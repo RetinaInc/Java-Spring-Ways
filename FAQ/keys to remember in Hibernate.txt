@@ -1,0 +1,13 @@
+Keys players to remember while using hibernate
+
+SessionFactory
+-Reads the hibernate config file and gets the connection to the db 
+-creates session objects
+-heavy-weight object
+-only create once in your app
+
+Session
+   - Wrap a jdbc connection
+   - main object used to save/retrieve objects
+   -  short lived object
+   -  retrived from sessionFactory
