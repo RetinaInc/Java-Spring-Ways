@@ -1,0 +1,73 @@
+HEADS UP - FOR JAVA 9 USERS
+JUST A HEADS UP - FOR JAVA 9, 10 and 11 USERS
+
+If you are using Java 9, 10 or 11, then you will encounter an error when you run your Hibernate program.
+
+These are the steps to resolve it. Come back to the lecture if you hit the error.
+
+----
+
+Error: Exception in thread "main" java.lang.NoClassDefFoundError: javax/xml/bind/JAXBException
+
+
+This happens because of Java 9 and higher. 
+
+Java 9 and higher has removed java.xml.bind from its default classpath. That's why we get the class not found exception.  We have to explicitly add JAR files to the build path.
+
+---
+
+Solution
+
+For Java 9 and higher, you need to additional JAR files.
+
+You need to download the following JAR files:
+
+javax.activation-1.2.0.jar
+jaxb-api-2.3.0.jar
+jaxb-core-2.3.0.jar
+jaxb-impl-2.3.0.jar
+
+---
+
+1. Download the files using links below:
+
+javax.activation-1.2.0.jar
+
+jaxb-api-2.3.0.jar
+
+jaxb-core-2.3.0.jar
+
+jaxb-impl-2.3.0.jar
+
+---
+
+2. Copy the JAR files to the lib folder of your project
+
+javax.activation-1.2.0.jar
+jaxb-api-2.3.0.jar
+jaxb-core-2.3.0.jar
+jaxb-impl-2.3.0.jar
+
+---
+
+Use the following steps to add the JAR files to your Java Build Path.
+
+3. Right-click your project, select Properties
+
+4. On left-hand side, click Java Build Path
+
+5. In top-center of dialog, click Libraries
+
+6. Click Classpath and then Click Add JARs ...
+
+7. Navigate to the JAR files <your-project>/lib
+
+Select the files:
+javax.activation-1.2.0.jar
+jaxb-api-2.3.0.jar
+jaxb-core-2.3.0.jar
+jaxb-impl-2.3.0.jar
+
+8. Click OK then click Apply and Close
+
+Eclipse will perform a rebuild of your project and it will resolve the related build/runtime errors.
