@@ -1,0 +1,47 @@
+FAQ:  Maven can't find a class, but it is listed in the pom.xml
+
+First, double-check that you have the correct Maven coordinates in the file (groupId, artifactId and version). Look for typos.
+
+--
+
+This could be caused by a corrupt local Maven repo. You can resolve it with these steps.
+
+Option 1:
+
+
+
+1. On your project, right-click: Maven > Update Project
+
+2. In the dialog, check the box: Force Update of Snapshots/Releases
+
+3. Click Ok
+
+Maven will perform a rebuild.
+
+If that doesn't solve your problem then move to option 2
+
+Option 2:
+
+
+
+1. Delete your local Maven repo, the .m2 directory on your computer
+
+On MS Windows
+
+either  
+C:\Documents and Settings\<yourUserName>\.m2
+c:\Users\<yourUserName>\.m2
+
+On Mac/Linux
+
+~/.m2
+
+--
+
+Note, on your OS, you may need to configure your OS to show hidden files.
+
+2. Once .m2 directory is deleted, restart Eclipse
+
+3. On your project, right-click: Maven > Update Project
+
+This will resolve your issue.
