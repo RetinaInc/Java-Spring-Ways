@@ -71,3 +71,30 @@ jaxb-impl-2.3.0.jar
 8. Click OK then click Apply and Close
 
 Eclipse will perform a rebuild of your project and it will resolve the related build/runtime errors.
+
+Note, if you are using Maven then you can add this to your POM file
+
+<dependency>
+   <groupId>javax.xml.bind</groupId>
+   <artifactId>jaxb-api</artifactId>
+   <version>2.2.8</version>
+</dependency>
+
+<dependency>
+   <groupId>com.sun.xml.bind</groupId>
+   <artifactId>jaxb-core</artifactId>
+   <version>2.2.8</version>
+</dependency>
+
+<dependency>
+   <groupId>com.sun.xml.bind</groupId>
+   <artifactId>jaxb-impl</artifactId>
+   <version>2.2.8</version>
+</dependency>
+
+<dependency>
+   <groupId>com.sun.activation</groupId>
+   <artifactId>javax.activation</artifactId>
+   <version>1.2.0</version>
+</dependency>
+
