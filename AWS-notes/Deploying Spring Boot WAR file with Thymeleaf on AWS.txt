@@ -1,0 +1,156 @@
+Deploy Spring Boot WAR file with Thymeleaf to AWS Elastic Beanstalk
+by Chad Darby
+
+check his awesome video tutorials on YOutube and Udemy
+
+You can deploy a Spring Boot application as a WAR file to AWS Elastic Beanstalk. In this scenario, we will use Thymeleaf as the view template.
+
+We will create a WAR file and deploy the WAR to the Tomcat server running on Elastic Beanstalk. This is known as a traditional deployment.
+
+Note: If you are deploying using JSP, please see the next bonus lecture for the JSP deployment steps.
+
+---
+
+High-level steps for Thymeleaf Deployment
+
+1. Update main Spring Boot application
+
+2. Update Maven POM file
+
+3. Create WAR file
+
+4. Deploy to AWS Elastic Beanstalk
+
+
+
+Spring Boot Reference Manual
+
+For full details on this process, see the Spring Boot Reference Manual: Section 92.1 Creating a Deployable WAR file
+
+
+
+Working Example
+
+I have a full working project. You can download this app and perform test deployments to AWS
+
+Download: deploy-spring-boot-war-with-thymeleaf-on-aws-elastic-beanstalk.zip
+
+
+
+This app is a very simple helloworld example that exposes a "/test" request mapping
+
+package com.luv2code.deploydemo.controller;
+ 
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+ 
+@Controller
+public class HelloWorldController {
+ 
+	@RequestMapping("/test")
+	public String sayHello() {
+		return "hello";
+	}
+	
+}
+
+
+and a simple Thymeleaf page: hello.html
+
+<html>
+<body>
+ 
+<h3>Hello World from Thymeleaf!</h3>
+ 
+</body>
+</html>
+----
+
+Detailed steps
+
+
+
+1. Update main Spring Boot application
+
+In your main Spring Boot application, you need to
+
+a. extend the SpringBootServletInitializer
+
+b. override the configure(...) method
+
+
+
+Your code should look like this
+
+package com.luv2code.deploydemo;
+ 
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
+ 
+@SpringBootApplication
+public class DeploydemoApplication extends SpringBootServletInitializer  {
+ 
+	@Override
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+		return application.sources(DeploydemoApplication.class);
+	}
+	
+	public static void main(String[] args) {
+		SpringApplication.run(DeploydemoApplication.class, args);
+	}
+ 
+}
+
+
+2. Update Maven POM file
+
+Update your POM.xml to use WAR packaging
+
+<packaging>war</packaging>
+
+The WAR packaging should appear just after your Maven coordinates (group, artifact, version)
+
+	<groupId>com.luv2code</groupId>
+	<artifactId>deploydemo</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+In POM.xml, add this dependency. It ensures the Tomcat embedded does not interfere with external Tomcat server.
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+
+3. Create WAR file
+
+Create the WAR file with the command: mvn clean package
+
+This will create a the following WAR file:  target/deploydemo-0.0.1-SNAPSHOT.war
+
+This is the file that you will deploy to AWS.
+
+
+
+4. Deploy to AWS Elastic Beanstalk
+
+In AWS Elastic Beanstalk,
+
+a. Create New Application
+
+b. Create New Environment: select Web server environment
+
+c. In Base Configuration section, select Preconfigured platform > Tomcat
+
+d. Upload your WAR file from your project
+
+e. Continue steps to deploy
+
+f. Once deployed, Visit the app URL:  http:<<your-aws-url>>/test     (be sure to append "/test")
+
+
+
+You will see the helloworld page. Congrats!
