@@ -1,0 +1,15 @@
+502 Proxy Error (MySQL Database Connection)
+
+by Chad Darby
+
+When deploying CRM app to AWS, you may encounter the following error:
+
+Solution
+
+Follow the steps below to resolve this issue.
+
+1. Remove the existing inbound rules and add rule again.
+
+2. Enter the port number (range = 3306) and source (choose Anywhere) as shown in the image below.
+Protocol = TCP
+Refresh the web page to see the desired output of the  app.
